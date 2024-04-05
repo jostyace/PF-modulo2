@@ -135,7 +135,7 @@ export const estaLogeado = (req, res, next) => {
 export const esPropietario = (req, res, next) => {
   const userId = req.session.userId
   const { id } = req.params
-  if (userId !== id) {
+  if (parseInt(userId) !== parseInt(id) {
     return res.status(403).json({ message: 'Acceso denegado. No tienes permiso para realizar esta acción.' })
   }
   next()
